@@ -4,9 +4,215 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Asoft_Main_WPF"
+        xmlns:viewModel="clr-namespace:Asoft_Main_WPF.MVVM.ViewModel"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow"
+        Height="800"
+        Width="1000"
+        WindowStyle="None"
+        ResizeMode="CanResizeWithGrip"
+        Background="Transparent"
+        AllowsTransparency="True">
+    <Window.DataContext>
+        <viewModel:MainViewModel />
+    </Window.DataContext>
+    <Border Background="#272537"
+            CornerRadius="20">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition ></ColumnDefinition>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"></RowDefinition>
+                <RowDefinition ></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+            </Grid.RowDefinitions>
+            <!--Top Main-->
+            <Border Grid.ColumnSpan="2">
+                <Grid HorizontalAlignment="Stretch"
+                      MouseDown="Border_MouseDown">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="5"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label />
+                    <Label Content="ASOFT"
+                           FontSize="30"
+                           FontWeight="Bold"
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           Margin="30,0,0,0" />
+                    <Label Content="Content"
+                           FontSize="20"
+                           FontWeight="Bold"
+                           Foreground="White"
+                           HorizontalAlignment="Center"
+                           Margin="0,20,0,0" />
+                    <StackPanel HorizontalAlignment="Right"
+                                Orientation="Horizontal">
+                        <materialDesign:Chip Content="Phạm Đức"
+                                             Foreground="White">
+                            <materialDesign:Chip.Icon  >
+                                
+                                <materialDesign:PackIcon Kind="Account"/>
+                            </materialDesign:Chip.Icon>
+                        </materialDesign:Chip>
+                        <Button Background="LightGray"
+                                BorderThickness="0"
+                                Style="{StaticResource MaterialDesignRaisedButton}"
+                                Height="30"
+                                materialDesign:ButtonAssist.CornerRadius="10"
+                                ToolTip="MaterialDesignRaisedButton with Round Corners"
+                                Margin="0,0,10,0"
+                                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                            <TextBlock Text="Logout" />
+
+                        </Button>
+                        <Button Width="49"
+                                Height="29"
+                                Content="❌"
+                                VerticalAlignment="Top"
+                                Background="Transparent"
+                                BorderThickness="0"
+                                Foreground="Gray"
+                                FontWeight="Bold"
+                                Click="btnClose_Click" />
+
+                    </StackPanel>
+                    <Rectangle Grid.Row="1"
+                               Fill="#c2185b" />
+                </Grid>
+            </Border>
+            <!--Left Main-->
+
+
+            <Border Grid.Row="1"
+                    Background="LightGray"
+                    CornerRadius="5">
+            </Border>
+            <Grid Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0" Background="Transparent"
+                        BorderThickness="0"
+                        Height="100">
+                    <StackPanel Width="auto"
+                                Height="auto">
+                        <materialDesign:PackIcon Width="50"
+                                                 Height="50"
+                                                 HorizontalAlignment="Center"
+                                                 Kind="RefreshAuto"
+                                                 Foreground="#4eff91" />
+                        <TextBlock HorizontalAlignment="Center"
+                                   Text="Auto"
+                                   Foreground="#4eff91" />
+                    </StackPanel>
+                </Button>
+                <Button Grid.Row="1"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Height="100">
+                    <StackPanel Width="auto"
+                                Height="auto">
+                        <materialDesign:PackIcon Width="50"
+                                                 Height="50"
+                                                 HorizontalAlignment="Center"
+                                                 Kind="HandWaveOutline"
+                                                 Foreground="#ecff4e" />
+                        <TextBlock HorizontalAlignment="Center"
+                                   Text="Manual"
+                                   Foreground="#ecff4e" />
+                    </StackPanel>
+                </Button>
+                <Button Grid.Row="2"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Height="100">
+                    <StackPanel Width="auto"
+                                Height="auto">
+                        <materialDesign:PackIcon Width="50"
+                                                 Height="50"
+                                                 HorizontalAlignment="Center"
+                                                 Kind="HumanMaleBoard"
+                                                 Foreground="#4e99ff" />
+                        <TextBlock HorizontalAlignment="Center"
+                                   Text="Teaching"
+                                   Foreground="#4e99ff" />
+                    </StackPanel>
+                </Button>
+                <Button Grid.Row="3"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Height="100">
+                    <StackPanel Width="auto"
+                                Height="auto">
+                        <materialDesign:PackIcon Width="50"
+                                                 Height="50"
+                                                 HorizontalAlignment="Center"
+                                                 Kind="Database"
+                                                 Foreground="#ffc554" />
+                        <TextBlock HorizontalAlignment="Center"
+                                   Text="Data"
+                                   Foreground="#ffc554" />
+                    </StackPanel>
+                </Button>
+                <Button Grid.Row="4"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Height="100">
+                    <StackPanel Width="auto"
+                                Height="auto">
+                        <materialDesign:PackIcon Width="50"
+                                                 Height="50"
+                                                 HorizontalAlignment="Center"
+                                                 Kind="BellAlert"
+                                                 Foreground="#ff5131" />
+                        <TextBlock HorizontalAlignment="Center"
+                                   Text="Alarm"
+                                   Foreground="#ff5131" />
+                    </StackPanel>
+                </Button>
+                <Button Grid.Row="5"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Height="100">
+                    <StackPanel Width="auto"
+                                Height="auto">
+                        <materialDesign:PackIcon Width="50"
+                                                 Height="50"
+                                                 HorizontalAlignment="Center"
+                                                 Kind="Cog"
+                                                 Foreground="#844eff" />
+                        <TextBlock HorizontalAlignment="Center"
+                                   Text="Config"
+                                   Foreground="#844eff" />
+                    </StackPanel>
+                </Button>               
+                    
+            </Grid>
+            
+            <!--Bottom Main-->
+            <Border Grid.Row="2" Grid.ColumnSpan="2">
+                <Label VerticalAlignment="Center" HorizontalAlignment="Center">
+                    Copyright © ASOFT 2022
+                </Label>
+            </Border>
+        </Grid>
+
+
+    </Border>
 </Window>

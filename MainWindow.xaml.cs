@@ -24,5 +24,45 @@ namespace Asoft_Main_WPF
         {
             InitializeComponent();
         }
+
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+           // MessageBox.Show("DucPH");
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+            if (e.ClickCount == 2)
+            {
+                if (Application.Current.MainWindow.WindowState == WindowState.Maximized)
+                {
+                    Application.Current.MainWindow.WindowState = WindowState.Normal;
+                }
+                else
+                    Application.Current.MainWindow.WindowState = WindowState.Maximized;
+            }
+        }
+
+        private void Border_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+            if (e.ClickCount == 2)
+            {
+                if (Application.Current.MainWindow.WindowState == WindowState.Maximized)
+                {
+                    Application.Current.MainWindow.WindowState = WindowState.Normal;
+                }
+                else
+                    Application.Current.MainWindow.WindowState = WindowState.Maximized;
+            }
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }
