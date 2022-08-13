@@ -13,7 +13,6 @@
         TextOptions.TextRenderingMode="Auto"
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
-        Title="MainWindow"
         Height="800"
         Width="1000"
         WindowStyle="None"
@@ -33,7 +32,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="75"></RowDefinition>
                 <RowDefinition ></RowDefinition>
-                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
             </Grid.RowDefinitions>
             <!--Top Main-->
             <Border Grid.ColumnSpan="2">
@@ -50,7 +49,7 @@
                            Foreground="White"
                            VerticalAlignment="Center"
                            Margin="30,0,0,0" />
-                    <Label Content="Content"
+                    <Label Content="{Binding Header}"
                            FontSize="20"
                            FontWeight="Bold"
                            Foreground="White"
@@ -58,21 +57,28 @@
                            Margin="0,20,0,0" />
                     <StackPanel HorizontalAlignment="Right"
                                 Orientation="Horizontal">
-                        <materialDesign:Chip Content="Phạm Đức"
-                                             Foreground="White">
-                            <materialDesign:Chip.Icon  >
-                                
-                                <materialDesign:PackIcon Kind="Account"/>
-                            </materialDesign:Chip.Icon>
-                        </materialDesign:Chip>
+                        <StackPanel Orientation="Vertical">
+                            <materialDesign:Chip Content="Phạm Đức"
+                                                 Foreground="White" Margin="10,10,30,0">
+                                <materialDesign:Chip.Icon>
+
+                                    <materialDesign:PackIcon Kind="Account" />
+                                </materialDesign:Chip.Icon>
+                            </materialDesign:Chip>
+                            <Label x:Name="H_DateTime"
+                                   HorizontalAlignment="Center"
+                                   Foreground="WhiteSmoke"
+                                   Content="{Binding Datetime}"
+                                   ContentStringFormat="yyyy/MM/dd hh:mm:ss tt" />
+                        </StackPanel>
+                        
                         <Button Background="LightGray"
                                 BorderThickness="0"
                                 Style="{StaticResource MaterialDesignRaisedButton}"
                                 Height="30"
                                 materialDesign:ButtonAssist.CornerRadius="10"
                                 ToolTip="MaterialDesignRaisedButton with Round Corners"
-                                Margin="0,0,10,0"
-                                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                                Margin="0,0,10,0">
                             <TextBlock Text="Logout" />
 
                         </Button>
@@ -92,8 +98,6 @@
                 </Grid>
             </Border>
             <!--Left Main-->
-
-
             <Border Grid.Row="1"
                     Background="LightGray"
                     CornerRadius="5">
@@ -106,10 +110,14 @@
                     <RowDefinition Height="2*"></RowDefinition>
                     <RowDefinition Height="2*"></RowDefinition>
                     <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Button Grid.Row="0" Background="Transparent"
                         BorderThickness="0"
-                        Height="100">
+                        Height="100"
+                        Command="{Binding HomeViewCommand}"
+                        Name="btn_Auto"
+                        Click="btnAuto_Click">
                     <StackPanel Width="auto"
                                 Height="auto">
                         <materialDesign:PackIcon Width="50"
@@ -125,7 +133,10 @@
                 <Button Grid.Row="1"
                         Background="Transparent"
                         BorderThickness="0"
-                        Height="100">
+                        Height="100"
+                        Command="{Binding ManualViewCommand}"
+                        Name="btn_Manual"
+                        Click="btnManual_Click">
                     <StackPanel Width="auto"
                                 Height="auto">
                         <materialDesign:PackIcon Width="50"
@@ -141,7 +152,10 @@
                 <Button Grid.Row="2"
                         Background="Transparent"
                         BorderThickness="0"
-                        Height="100">
+                        Height="100"
+                        Command="{Binding TeachingViewCommand}"
+                        Name="btn_Teaching"
+                        Click="btnTeaching_Click">
                     <StackPanel Width="auto"
                                 Height="auto">
                         <materialDesign:PackIcon Width="50"
@@ -157,7 +171,29 @@
                 <Button Grid.Row="3"
                         Background="Transparent"
                         BorderThickness="0"
-                        Height="100">
+                        Height="100"
+                        Command="{Binding MonitorViewCommand}"
+                        Name="btn_Monitor"
+                        Click="btnMonitor_Click">
+                    <StackPanel Width="auto"
+                                Height="auto">
+                        <materialDesign:PackIcon Width="50"
+                                                 Height="50"
+                                                 HorizontalAlignment="Center"
+                                                 Kind="TabletDashboard"
+                                                 Foreground="LimeGreen" />
+                        <TextBlock HorizontalAlignment="Center"
+                                   Text="Monitor"
+                                   Foreground="#ffc554" />
+                    </StackPanel>
+                </Button>
+                <Button Grid.Row="4"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Height="100"
+                        Command="{Binding DataViewCommand}"
+                        Name="btn_Data"
+                        Click="btnData_Click">
                     <StackPanel Width="auto"
                                 Height="auto">
                         <materialDesign:PackIcon Width="50"
@@ -170,10 +206,13 @@
                                    Foreground="#ffc554" />
                     </StackPanel>
                 </Button>
-                <Button Grid.Row="4"
+                <Button Grid.Row="5"
                         Background="Transparent"
                         BorderThickness="0"
-                        Height="100">
+                        Height="100"
+                        Command="{Binding AlarmViewCommand}"
+                        Name="btn_Alarm"
+                        Click="btnAlarm_Click">
                     <StackPanel Width="auto"
                                 Height="auto">
                         <materialDesign:PackIcon Width="50"
@@ -186,10 +225,13 @@
                                    Foreground="#ff5131" />
                     </StackPanel>
                 </Button>
-                <Button Grid.Row="5"
+                <Button Grid.Row="6"
                         Background="Transparent"
                         BorderThickness="0"
-                        Height="100">
+                        Height="100"
+                        Command="{Binding ConfigViewCommand}"
+                        Name="btn_Config"
+                        Click="btnConfig_Click">
                     <StackPanel Width="auto"
                                 Height="auto">
                         <materialDesign:PackIcon Width="50"
@@ -204,13 +246,19 @@
                 </Button>               
                     
             </Grid>
-            
             <!--Bottom Main-->
             <Border Grid.Row="2" Grid.ColumnSpan="2">
                 <Label VerticalAlignment="Center" HorizontalAlignment="Center">
                     Copyright © ASOFT 2022
                 </Label>
             </Border>
+            <!--Main Content-->
+            <ContentControl Grid.Row="1"
+                            Grid.Column="0"
+                            Margin="5"
+                            Content="{Binding Currentview}">
+
+            </ContentControl>
         </Grid>
 
 

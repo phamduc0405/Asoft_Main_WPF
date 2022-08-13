@@ -1,0 +1,144 @@
+﻿<UserControl x:Class="Asoft_Main_WPF.MVVM.View.ManualView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Asoft_Main_WPF.MVVM.View"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Regular"
+             TextElement.FontSize="13"
+             TextOptions.TextFormattingMode="Ideal"
+             TextOptions.TextRenderingMode="Auto"
+             FontFamily="{DynamicResource MaterialDesignFont}"
+             mc:Ignorable="d"
+             d:DesignHeight="450"
+             d:DesignWidth="800">
+
+    <Grid VerticalAlignment="Stretch">
+
+        <materialDesign:Card materialDesign:ValidationAssist.Background="Transparent"
+                             Background="Transparent">
+            <TabControl materialDesign:NavigationRailAssist.ShowSelectionBackground="True"
+                        SnapsToDevicePixels="True"
+                        Style="{StaticResource MaterialDesignNavigationRailTabControl}"
+                        materialDesign:ValidationAssist.Background="Transparent"
+                        Background="Transparent"
+                        TabStripPlacement="Left">
+
+
+                <TabItem Width="123"
+                         Background="Navy">
+                    <TabItem.Header>
+                        <StackPanel Width="auto"
+                                    Height="auto">
+                            <TextBlock HorizontalAlignment="Center"
+                                       Text="Motor" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="8*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Button Grid.Column="0"
+                                Grid.Row="0"
+                                Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                Height="50"
+                                Width="100"
+                                materialDesign:ButtonAssist.CornerRadius="5"
+                                ToolTip="MaterialDesignRaisedLightButton with Round Corners">
+                            <TextBlock Text="Selected" />
+                        </Button>
+                        <Button Grid.Column="0"
+                                Grid.Row="1"
+                                Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                Height="50"
+                                Width="100"
+                                materialDesign:ButtonAssist.CornerRadius="5"
+                                ToolTip="MaterialDesignRaisedLightButton with Round Corners">
+                            <TextBlock Text="Selected" />
+                        </Button>
+                        <Button Grid.Column="0"
+                                Grid.Row="2"
+                                Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                Height="50"
+                                Width="100"
+                                materialDesign:ButtonAssist.CornerRadius="5"
+                                ToolTip="MaterialDesignRaisedLightButton with Round Corners">
+                            <TextBlock Text="Selected" />
+                        </Button>
+                        <Button Grid.Column="0"
+                                Grid.Row="3"
+                                Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                Height="50"
+                                Width="100"
+                                materialDesign:ButtonAssist.CornerRadius="5"
+                                ToolTip="MaterialDesignRaisedLightButton with Round Corners">
+                            <TextBlock Text="Selected" />
+                        </Button>
+                        <Button Grid.Column="0"
+                                Grid.Row="4"
+                                Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                Height="50"
+                                Width="100"
+                                materialDesign:ButtonAssist.CornerRadius="5"
+                                ToolTip="MaterialDesignRaisedLightButton with Round Corners">
+                            <TextBlock Text="Selected" />
+                        </Button>
+                        <Button Grid.Column="0"
+                                Grid.Row="5"
+                                Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                Height="50"
+                                Width="100"
+                                materialDesign:ButtonAssist.CornerRadius="5"
+                                ToolTip="MaterialDesignRaisedLightButton with Round Corners">
+                            <TextBlock Text="Selected" />
+                        </Button>
+                    </Grid>
+                </TabItem>
+                <TabItem Width="123"
+                         Background="Navy">
+                    <TabItem.Header>
+                        <StackPanel Width="auto"
+                                    Height="auto">
+                            <TextBlock HorizontalAlignment="Center"
+                                       Text="Cylinder" />
+                        </StackPanel>
+                    </TabItem.Header>
+
+                </TabItem>
+                <TabItem Width="123"
+                         Background="Navy">
+                    <TabItem.Header>
+                        <StackPanel Width="auto"
+                                    Height="auto">
+                            <TextBlock HorizontalAlignment="Center"
+                                       Text="Servo" />
+                        </StackPanel>
+                    </TabItem.Header>
+
+                </TabItem>
+                <TabItem Width="123"
+                         Background="Navy">
+                    <TabItem.Header>
+                        <StackPanel Width="auto"
+                                    Height="auto">
+                            <TextBlock HorizontalAlignment="Center"
+                                       Text="Interface" />
+                        </StackPanel>
+                    </TabItem.Header>
+
+                </TabItem>
+            </TabControl>
+        </materialDesign:Card>
+    </Grid>
+</UserControl>
