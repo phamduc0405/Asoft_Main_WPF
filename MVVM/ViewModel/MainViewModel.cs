@@ -1,12 +1,14 @@
 ﻿using Asoft_Main_WPF.Core;
 using System;
 using System.Windows.Threading;
+using Asoft_Main_WPF.Properties;
+using System.Windows;
 
 namespace Asoft_Main_WPF.MVVM.ViewModel
 {
     internal class MainViewModel : ObservableObject
     {
-
+        
         public RelayCommand HomeViewCommand { get; set; }
         public RelayCommand ManualViewCommand { get; set; }
         public RelayCommand DataViewCommand { get; set; }
@@ -66,7 +68,6 @@ namespace Asoft_Main_WPF.MVVM.ViewModel
             MonitorVm = new MonitorViewModel();
             Currentview = ManualVm;
             Header = "Manual";
-
             #region Chuyển Màn Hình Child Auto,Manual
             HomeViewCommand = new RelayCommand(o =>
             {

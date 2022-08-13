@@ -65,12 +65,16 @@ namespace Asoft_Main_WPF
             }
         }
 
+        public int mainwdabc { get; set; }
         public MainWindow()
         {
             InitializeComponent();
             
         }
-
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Selected = 1;
+        }
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
             // MessageBox.Show("DucPH");
@@ -128,9 +132,7 @@ namespace Asoft_Main_WPF
             Selected = 6;
 
         }
-        
-        
-        
-        
+
+
     }
 }
