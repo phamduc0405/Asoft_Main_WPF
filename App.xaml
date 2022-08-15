@@ -5,7 +5,7 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:viewModel ="clr-namespace:Asoft_Main_WPF.MVVM.ViewModel"
              xmlns:view="clr-namespace:Asoft_Main_WPF.MVVM.View"
-             StartupUri="MainWindow.xaml">
+             Startup="ApplicationStart">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -40,6 +40,9 @@
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:MonitorViewModel}">
                 <view:MonitorView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:LoginViewModel}">
+                <view:LoginView />
             </DataTemplate>
 
         </ResourceDictionary>
