@@ -68,7 +68,7 @@
     </Compile>
     <Compile Include="Repository\RepositoryBase.cs" />
     <Compile Include="Repository\UserRepository.cs" />
-    <Compile Include="Themes\PasswordBox.xaml.cs">
+    <Compile Include="Style\PasswordBox.xaml.cs">
       <DependentUpon>PasswordBox.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
@@ -117,15 +117,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\PasswordBox.xaml">
+    <Page Include="Style\PasswordBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\TextBoxTheme.xaml">
+    <Page Include="Style\TextBoxTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\MenuButtonTheme.xaml">
+    <Page Include="Style\MenuButtonTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
