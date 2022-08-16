@@ -60,7 +60,7 @@
                                 Orientation="Horizontal">
                         <StackPanel Orientation="Vertical">
                             <materialDesign:Chip Content="Phạm Đức"
-                                                 Foreground="White" Margin="10,10,30,0">
+                                                 Foreground="White" Margin="10,10,40,0">
                                 <materialDesign:Chip.Icon>
 
                                     <materialDesign:PackIcon Kind="Account" />
