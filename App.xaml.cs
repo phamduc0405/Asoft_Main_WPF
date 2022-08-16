@@ -1,5 +1,4 @@
-﻿using Asoft_Main_WPF.MVVM.View;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -14,19 +13,5 @@ namespace Asoft_Main_WPF
     /// </summary>
     public partial class App : Application
     {
-        protected void ApplicationStart(object sender, StartupEventArgs e)
-        {
-            var loginview = new LoginView();
-            loginview.Show();
-            loginview.IsVisibleChanged += (s, ev) =>
-            {
-                if (loginview.IsVisible == false && loginview.IsLoaded)
-                {
-                    var mainView = new MainWindow();
-                    mainView.Show();
-                    loginview.Close();
-                }
-            };
-        }
     }
 }

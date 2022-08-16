@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace Asoft_Main_WPF.Core
 {
-    public abstract class ObservableObject : INotifyPropertyChanged
+    internal class ObservableObject : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
