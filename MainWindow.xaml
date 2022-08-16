@@ -125,7 +125,7 @@
                                                  Height="50"
                                                  HorizontalAlignment="Center"
                                                  Kind="RefreshAuto"
-                                                 Foreground="#4eff91" />
+                                                 Foreground="#FFFF" />
                         <TextBlock HorizontalAlignment="Center"
                                    Text="Auto"
                                    Foreground="#4eff91" />
